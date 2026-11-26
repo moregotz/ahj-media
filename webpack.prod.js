@@ -7,10 +7,4 @@ module.exports = merge(common, {
   output: {
     publicPath: '/ahj-media/',
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
 });
