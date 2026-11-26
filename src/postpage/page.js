@@ -94,10 +94,8 @@ export default class Page {
         const geo = `<div class="post__geo">${this.getGeoString()} <span class="post__eye">👁</span></div>`;
 
         let body = '';
-
         if (post.type === 'text') {
             body = `<div class="post__text">${post.text}</div>`;
-
         } else if (post.type === 'audio') {
             const id = `a-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
             body = `
@@ -107,7 +105,6 @@ export default class Page {
                     <audio src="${post.src}" data-audio-id="${id}" preload="metadata"></audio>
                 </div>
             `;
-
         } else if (post.type === 'video') {
             const id = `v-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
             body = `
@@ -120,7 +117,6 @@ export default class Page {
                 </div>
             `;
         }
-
         card.innerHTML = `${dot}<div class="post__card">${date}${body}${geo}</div>`;
         return card;
     }
